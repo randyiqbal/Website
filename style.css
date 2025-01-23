@@ -24,7 +24,7 @@
   gap: 20px; /* Memberikan jarak antar elemen */
   justify-content: center; /* Menyelaraskan elemen di tengah */
   align-items: center; /* Menyelaraskan elemen secara vertikal */
-  margin: 20px 0; /* Memberikan jarak atas dan bawah */
+  margin: 30px 0; /* Memberikan jarak atas dan bawah */
 }
 
 .skills-list li {
@@ -38,20 +38,20 @@
 }
 
 .skills-list img:hover {
-  transform: scale(1.1); /* Memperbesar gambar saat di-hover */
+  transform: scale(1.3); /* Memperbesar gambar saat di-hover */
 }
 
 .jumbotron btn {
   background-color: #ffde59;
 }
 
-.jumbotron .btn-primary {
-  background-color: #ffffff; /* Warna biru muda (piyu) */
-  border-color: #ffffff; /* Sesuaikan warna border */
+.jumbotron .btn-dark {
+  background-color: #302d2d; /* Warna biru muda (piyu) */
+  border-color: #ffde59; /* Sesuaikan warna border */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.jumbotron .btn-primary:hover {
+.jumbotron .btn-dark:hover {
   background-color: #5c5c5c; /* Warna lebih gelap saat hover */
   border-color: #5c5c5c;
   transform: scale(1.05); /* Efek zoom saat hover */
@@ -60,53 +60,49 @@
 /* Pengalaman Kerja Awal*/
 
 .work-experience {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
 }
 
 .work-experience h2 {
-    font-weight: bold;
-    color: #343a40;
+  font-weight: bold;
+  color: #343a40;
 }
 
 .work-experience .card {
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .work-experience .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 /* ahir pengalaman kerja*/
 
-
-
-
 #certificates {
-    padding: 50px 0;
+  padding: 50px 0;
 }
 
 #certificates .card {
-    border-radius: 10px;
-    overflow: hidden;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 #certificates .card-img-top {
-    height: 200px;
-    object-fit: cover; /* Menjaga proporsi gambar */
-  }
+  height: 200px;
+  object-fit: cover; /* Menjaga proporsi gambar */
+}
 
-  #certificates .btn-show-caption {
-      transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  #certificates .btn-show-caption:hover {
-      background-color: #0056b3; /* Warna lebih gelap saat hover */
-      transform: scale(1.05); /* Animasi zoom */
-  }
-  
-  #certificates .caption {
-      color: #6c757d;
-      font-size: 0.9rem;
-  }
-  
+#certificates .btn-show-caption {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#certificates .btn-show-caption:hover {
+  background-color: #0056b3; /* Warna lebih gelap saat hover */
+  transform: scale(1.05); /* Animasi zoom */
+}
+
+#certificates .caption {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
