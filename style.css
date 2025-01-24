@@ -128,3 +128,20 @@ a.text-white:hover {
   color: #ffd700; /* Warna kuning saat hover */
   transform: scale(1.1); /* Membesarkan ikon 10% saat di-hover */
 }
+
+/*card section
+
+/* Membuat card dengan efek zoom */
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasi smooth */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Membesarkan ukuran card saat di-hover */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.9); /* Menambahkan shadow yang lebih besar saat di-hover */
+}
+
+/*riwayat pendidikan mulai*/
+.timeline h2 {
+  padding-top: 3rem;
+}
