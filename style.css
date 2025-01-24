@@ -85,12 +85,12 @@
 
 #certificates .card {
   border-radius: 10px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #certificates .card-img-top {
-  height: 200px;
-  object-fit: cover; /* Menjaga proporsi gambar */
+  height: 400px;
+  object-fit: fill; /* Menjaga proporsi gambar */
 }
 
 #certificates .btn-show-caption {
@@ -105,4 +105,26 @@
 #certificates .caption {
   color: #6c757d;
   font-size: 0.9rem;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  color: #ffd700 !important; /* Warna kuning */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek shadow */
+  transform: scale(1.1); /* Membesarkan ukuran teks 10% */
+  text-decoration: none; /* Hilangkan garis bawah */
+  transition: all 0.3s ease; /* Animasi transisi yang halus */
+}
+
+/* Menghilangkan garis bawah pada link */
+a.text-white {
+  text-decoration: none; /* Menghapus garis bawah */
+  color: white; /* Warna default ikon */
+  transition: color 0.3s ease, transform 0.3s ease; /* Animasi halus untuk perubahan warna dan pembesaran */
+}
+
+/* Mengubah warna menjadi kuning dan memperbesar ikon saat hover */
+a.text-white:hover {
+  color: #ffd700; /* Warna kuning saat hover */
+  transform: scale(1.1); /* Membesarkan ikon 10% saat di-hover */
 }
