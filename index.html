@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <title>Randy Iqbal Putra Kesuma | IT Professional</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #667eea;
+        --secondary: #764ba2;
+        --accent: #f093fb;
+        --dark: #1a1a2e;
+        --light: #f5f7fa;
+        --success: #2ecc71;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--light);
+        overflow-x: hidden;
+      }
+
+      /* NAVBAR STYLING */
+      .navbar {
+        background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        background: linear-gradient(135deg, #f093fb, #f5576c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-link {
+        position: relative;
+        margin: 0 10px;
+        font-weight: 500;
+        color: white !important;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* HERO SECTION */
+      .jumbotron {
+        background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 50%, var(--secondary) 100%);
+        padding: 6rem 2rem;
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .jumbotron::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.5;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        animation: fadeInUp 1s ease;
+      }
+
+      .jumbotron img {
+        width: 200px;
+        height: 200px;
+        border: 6px solid var(--accent);
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 20px 60px rgba(240, 147, 251, 0.3);
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation: float 3s ease-in-out infinite;
+        margin-bottom: 2rem;
+      }
+
+      .jumbotron img:hover {
+        transform: scale(1.15) rotateZ(5deg);
+        box-shadow: 0 30px 80px rgba(240, 147, 251, 0.5);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .jumbotron h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: white;
+        margin: 1rem 0;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .jumbotron p {
+        font-size: 1.3rem;
+        color: #e0e0e0;
+        margin-bottom: 2rem;
+        font-weight: 500;
+      }
+
+      .btn-gradient {
+        background: linear-gradient(135deg, var(--accent), #f5576c);
+        border: none;
+        padding: 12px 40px;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+        color: white !important;
+      }
+
+      .btn-gradient:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(240, 147, 251, 0.5);
+      }
+
+      /* SECTION STYLING */
+      section {
+        padding: 5rem 2rem;
+        position: relative;
+      }
+
+      section h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      section h2::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        border-radius: 2px;
+      }
+
+      /* ABOUT SECTION */
+      #About {
+        background: white;
+      }
+
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 2rem;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+      }
+
+      .skills-list li {
+        list-style: none;
+        position: relative;
+      }
+
+      .skills-list img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        transition: all 0.3s ease;
+      }
+
+      .skills-list li:hover img {
+        transform: scale(1.35) rotateZ(10deg);
+        filter: drop-shadow(0 10px 20px rgba(102, 126, 234, 0.4));
+      }
+
+      /* WORK EXPERIENCE */
+      .Pengalaman {
+        background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+      }
+
+      .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        background: white;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        position: relative;
+        height: 100%;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(102, 126, 234, 0.2);
+      }
+
+      .company-logo {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        margin-right: 8px;
+        vertical-align: middle;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover .company-logo {
+        transform: scale(1.15);
+      }
+
+      .card-text {
+        color: #666;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      /* CERTIFICATES */
+      #certificates {
+        background: white;
+      }
+
+      #certificates .card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      #certificates .card-img-top {
+        height: 350px;
+        object-fit: contain;
+        padding: 15px;
+        background: #f8f9fa;
+        transition: transform 0.4s ease;
+      }
+
+      #certificates .card:hover .card-img-top {
+        transform: scale(1.1);
+      }
+
+      .btn-show-caption {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border: none;
+        border-radius: 25px;
+        padding: 8px 20px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        color: white;
+      }
+
+      .btn-show-caption:hover {
+        transform: scale(1.08);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .caption {
+        color: #666;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        line-height: 1.6;
+        font-style: italic;
+        display: block;
+        padding: 10px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary);
+      }
+
+      /* FOOTER */
+      footer {
+        background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+        color: white;
+        padding: 4rem 2rem;
+      }
+
+      footer h2 {
+        color: white;
+        margin-bottom: 2rem;
+      }
+
+      footer h5 {
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      footer p {
+        color: #e0e0e0;
+        line-height: 1.8;
+      }
+
+      .form-control {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .form-control:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: var(--accent);
+        box-shadow: 0 0 15px rgba(240, 147, 251, 0.3);
+        color: white;
+      }
+
+      .form-label {
+        color: white;
+        font-weight: 600;
+      }
+
+      .social-icon {
+        display: inline-block;
+        margin-right: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        color: var(--accent) !important;
+        transform: translateY(-5px);
+      }
+
+      /* ANIMATIONS */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .jumbotron h1 {
+          font-size: 2.2rem;
+        }
+
+        .jumbotron p {
+          font-size: 1rem;
+        }
+
+        section {
+          padding: 3rem 1rem;
+        }
+
+        section h2 {
+          font-size: 2rem;
+        }
+
+        .skills-list {
+          gap: 20px;
+        }
+
+        .skills-list img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+
+      /* SCROLL BEHAVIOR */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--light);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#Home">🚀 Randy Iqbal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="#Home">Home</a>
+            <a class="nav-link" href="#About">About</a>
+            <a class="nav-link" href="#Pengalaman">Experience</a>
+            <a class="nav-link" href="#certificates">Certificates</a>
+            <a class="nav-link" href="#hubungi">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="jumbotron" id="Home">
+      <div class="hero-content">
+        <img src="./img/1732609286891 (1).jpg" alt="Randy Iqbal" />
+        <h1>Randy Iqbal Putra Kesuma</h1>
+        <p>🌐 IT Network | 🔒 Cyber Security | 💻 Web Developer | 🎯 IT Support</p>
+        <a href="#hubungi" class="btn btn-gradient">Get In Touch</a>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="About">
+      <div class="container">
+        <h2 class="mb-5">About Me</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4">
+            <p class="about-text">
+              Halo, nama saya Randy Iqbal Putra Kesuma. Saya adalah mahasiswa kelas karyawan yang masih aktif dan memiliki minat besar di dunia Teknologi Informasi, khususnya dalam bidang Jaringan IT, IT Support, Cyber Security dan
+              Pengembangan Website.
+            </p>
+            <p class="about-text">
+              Saya bisa bekerja dalam tim maupun individu, senang mempelajari hal-hal baru, dan selalu antusias menghadapi tantangan dalam dunia kerja. Saya memiliki sertifikasi MTCNA (MikroTik Certified Network Associate) dan keterampilan
+              teknis di berbagai bidang.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <h5 style="color: var(--primary); font-weight: 700; margin-bottom: 2rem; text-align: center">Technical Skills</h5>
+            <ul class="skills-list">
+              <li><img src="./img/mikrotik.png" alt="MikroTik" title="MikroTik" /></li>
+              <li><img src="./img/sqllogooo.png" alt="MySQL" title="MySQL" /></li>
+              <li><img src="./img/Oracle-Logo.png" alt="Oracle" title="Oracle" /></li>
+              <li><img src="./img/vblogo.png" alt="Visual Basic" title="Visual Basic" /></li>
+              <li><img src="./img/php.jpg" alt="PHP" title="PHP" /></li>
+              <li><img src="./img/htmlok.png" alt="HTML" title="HTML" /></li>
+              <li><img src="./img/cssok.png" alt="CSS" title="CSS" /></li>
+              <li><img src="./img/jsok.png" alt="JavaScript" title="JavaScript" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section class="Pengalaman" id="Pengalaman">
+      <div class="container">
+        <h2 class="mb-5">Work Experience</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card fade-in-on-scroll">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <img src="./img/yamaha.jpg" alt="Yamaha" class="company-logo" />
+                  PT Yamaha Indonesia
+                </h5>
+                <p class="card-text"><strong>Painting</strong></p>
+                <p class="card-text"><small>Jan 2018 - Jan 2020</small></p>
+                <p class="card-text">Pemeriksaan alat, prosedur produksi, quality control, dan finishing coating.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card fade-in-on-scroll">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <img src="./img/valeo.png" alt="Valeo" class="company-logo" />
+                  PT Valeo Pyeoghwa
+                </h5>
+                <p class="card-text"><strong>Assembly</strong></p>
+                <p class="card-text"><small>Jan 2021 - Apr 2025</small></p>
+                <p class="card-text">Produksi sesuai standar, quality assurance, dan SPC reporting.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card fade-in-on-scroll">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <img src="./img/images.png" alt="GaoTek" class="company-logo" />
+                  GaoTek Inc
+                </h5>
+                <p class="card-text"><strong>Web Developer (Remote)</strong></p>
+                <p class="card-text"><small>Oct 2023 - Feb 2024</small></p>
+                <p class="card-text">Website development, team collaboration, dan project delivery.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card fade-in-on-scroll">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <img src="./img/yamani.png" alt="Yamani" class="company-logo" />
+                  PT Yamani Spring
+                </h5>
+                <p class="card-text"><strong>IT Staff | Assistant Manager</strong></p>
+                <p class="card-text"><small>Apr 2025 - Present</small></p>
+                <p class="card-text">Network management, IT support, device control, dan user assistance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates">
+      <div class="container">
+        <h2 class="mb-5">Certifications</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card fade-in-on-scroll">
+              <img src="./img/serti mtcna.jpeg" class="card-img-top" alt="MTCNA Certificate" />
+              <div class="card-body text-center">
+                <h5 class="card-title">MTCNA</h5>
+                <button
+                  class="btn-show-caption"
+                  data-caption="Pada tahun 2024, saya mengikuti pelatihan MTCNA (MikroTik Certified Network Associate) selama 3 hari. MTCNA adalah sertifikasi dasar yang diberikan oleh MikroTik untuk menguji pemahaman tentang pengelolaan jaringan menggunakan perangkat MikroTik, mencakup konfigurasi router, manajemen jaringan, serta pengaturan berbagai layanan jaringan seperti routing, switching, dan firewall. Pelatihan ini memberikan dasar yang kuat bagi Anda dalam merancang dan mengelola jaringan berbasis MikroTik."
+                >
+                  Baca Keterangan
+                </button>
+                <p class="mt-3 caption d-none"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card fade-in-on-scroll">
+              <img src="./img/clmsCertificate design database_page-0001.jpg" class="card-img-top" alt="Oracle ( Database Foundations)" />
+              <div class="card-body text-center">
+                <h5 class="card-title">ORACLE ( Database Foundations)</h5>
+                <button
+                  class="btn-show-caption"
+                  data-caption="Sertifikat Database Foundation dari Oracle adalah sertifikasi dasar yang menguji pemahaman dan keterampilan dalam menggunakan teknologi basis data Oracle. Sertifikat ini mencakup konsep dasar tentang pengelolaan basis data, seperti perancangan, pengelolaan tabel, query dengan SQL, dan pemahaman tentang arsitektur basis data Oracle. Program ini memberi dasar yang kuat dalam bekerja dengan sistem manajemen basis data Oracle, yang penting untuk mata kuliah Manajemen Basis Data yang Anda pelajari."
+                >
+                  Baca Keterangan
+                </button>
+                <p class="mt-3 caption d-none"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card fade-in-on-scroll">
+              <img src="./img/foundation.jpg" class="card-img-top" alt="Oracle Certificate" />
+              <div class="card-body text-center">
+                <h5 class="card-title">ORACLE (Database Design)</h5>
+                <button
+                  class="btn-show-caption"
+                  data-caption="Sertifikat Database Design dari Oracle adalah sertifikasi yang menguji pemahaman dalam merancang struktur basis data yang efisien dan efektif menggunakan teknologi Oracle. Sertifikat ini mencakup konsep desain basis data seperti normalisasi, pemodelan entitas-relasi (ER), serta perancangan tabel dan indeks untuk mengoptimalkan kinerja. Program ini penting untuk meningkatkan kemampuan dalam merancang basis data yang kuat dan mudah dikelola, serta memastikan bahwa struktur basis data mendukung kebutuhan aplikasi dan bisnis."
+                >
+                  Baca Keterangan
+                </button>
+                <p class="mt-3 caption d-none"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="hubungi">
+      <div class="container">
+        <h2 class="mb-5">Get In Touch</h2>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <h5>Contact Info</h5>
+            <p>Jika profil saya cocok dan Anda memiliki pertanyaan atau ingin bekerja sama, dengan senang hati saya menunggu komunikasi lebih lanjut.</p>
+            <p><i class="bi bi-envelope-fill"></i> <a href="mailto:randyiqbal26@gmail.com" class="text-white text-decoration-underline">randyiqbal26@gmail.com</a></p>
+            <p><i class="bi bi-telephone-fill"></i> +62 878-7875-9673</p>
+            <p><i class="bi bi-geo-alt-fill"></i> Bekasi, Indonesia</p>
+            <div class="mt-4">
+              <h6>Follow Me</h6>
+              <a href="https://www.linkedin.com/in/randy-iqbal-putra-kesuma-2993041b5/" target="_blank" class="social-icon text-white"><i class="bi bi-linkedin" style="font-size: 1.5rem"></i></a>
+              <a href="https://www.facebook.com/share/14zuNKFPrN/?mibextid=qi2Omg" target="_blank" class="social-icon text-white"><i class="bi bi-facebook" style="font-size: 1.5rem"></i></a>
+              <a href="https://www.instagram.com/randyiqbalputra?igsh=MTk2c3JjZ2h4OW03Mw==" target="_blank" class="social-icon text-white"><i class="bi bi-instagram" style="font-size: 1.5rem"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <h5>Send Me a Message</h5>
+            <form action="mailto:randyiqbal26@gmail.com" method="POST" enctype="text/plain">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="name" name="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Pesan</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-gradient w-100">Send Message</button>
+            </form>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <p class="text-center">&copy; 2025 Randy Iqbal Putra Kesuma. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Scroll animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in-on-scroll").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Certificate button functionality
+      document.querySelectorAll(".btn-show-caption").forEach((button) => {
+        button.addEventListener("click", function (e) {
+          e.preventDefault();
+          const captionElement = this.nextElementSibling;
+          if (captionElement) {
+            captionElement.textContent = this.getAttribute("data-caption");
+            captionElement.classList.toggle("d-none");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

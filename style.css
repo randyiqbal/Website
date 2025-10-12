@@ -1,0 +1,147 @@
+.jumbotron {
+  padding: 4rem;
+  background-color: rgb(253, 253, 253);
+  background-image: url(img/Grey\ and\ Black\ Modern\ Professional\ Writers\ LinkedIn\ Background\ Photo.jpg);
+  border-color: #ffde59;
+}
+.jumbotron img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi untuk zoom dan bayangan */
+  border: 5px solid #ffde59;
+}
+
+.jumbotron img:hover {
+  transform: scale(1.1); /* Memperbesar gambar saat di-hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan */
+}
+
+#About {
+  padding-top: 3rem;
+}
+
+.skills-list {
+  display: flex; /* Mengatur elemen list menjadi horizontal */
+  flex-wrap: wrap; /* Agar elemen berpindah ke baris berikutnya jika tidak muat */
+  gap: 20px; /* Memberikan jarak antar elemen */
+  justify-content: center; /* Menyelaraskan elemen di tengah */
+  align-items: center; /* Menyelaraskan elemen secara vertikal */
+  margin: 30px 0; /* Memberikan jarak atas dan bawah */
+}
+
+.skills-list li {
+  list-style: none; /* Menghapus bullet pada daftar */
+}
+
+.skills-list img {
+  width: 100px; /* Menyesuaikan ukuran gambar */
+  height: auto; /* Memastikan proporsi gambar tetap */
+  transition: transform 0.3s ease-in-out; /* Animasi saat di-hover */
+}
+
+.skills-list img:hover {
+  transform: scale(1.3); /* Memperbesar gambar saat di-hover */
+}
+
+.jumbotron btn {
+  background-color: #ffde59;
+}
+
+.jumbotron .btn-dark {
+  background-color: #302d2d; /* Warna biru muda (piyu) */
+  border-color: #ffde59; /* Sesuaikan warna border */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.jumbotron .btn-dark:hover {
+  background-color: #5c5c5c; /* Warna lebih gelap saat hover */
+  border-color: #5c5c5c;
+  transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* Pengalaman Kerja Awal*/
+
+.work-experience {
+  background-color: #f8f9fa;
+}
+
+.work-experience h2 {
+  font-weight: bold;
+  color: #343a40;
+}
+
+.work-experience .card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-experience .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* ahir pengalaman kerja*/
+
+#certificates {
+  padding: 50px 0;
+}
+
+#certificates .card {
+  border-radius: 10px;
+  overflow: auto;
+}
+
+#certificates .card-img-top {
+  height: 400px;
+  object-fit: fill; /* Menjaga proporsi gambar */
+}
+
+#certificates .btn-show-caption {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#certificates .btn-show-caption:hover {
+  background-color: #0056b3; /* Warna lebih gelap saat hover */
+  transform: scale(1.05); /* Animasi zoom */
+}
+
+#certificates .caption {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  color: #ffd700 !important; /* Warna kuning */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek shadow */
+  transform: scale(1.1); /* Membesarkan ukuran teks 10% */
+  text-decoration: none; /* Hilangkan garis bawah */
+  transition: all 0.3s ease; /* Animasi transisi yang halus */
+}
+
+/* Menghilangkan garis bawah pada link */
+a.text-white {
+  text-decoration: none; /* Menghapus garis bawah */
+  color: white; /* Warna default ikon */
+  transition: color 0.3s ease, transform 0.3s ease; /* Animasi halus untuk perubahan warna dan pembesaran */
+}
+
+/* Mengubah warna menjadi kuning dan memperbesar ikon saat hover */
+a.text-white:hover {
+  color: #ffd700; /* Warna kuning saat hover */
+  transform: scale(1.1); /* Membesarkan ikon 10% saat di-hover */
+}
+
+/*card section
+
+/* Membuat card dengan efek zoom */
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasi smooth */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Membesarkan ukuran card saat di-hover */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.9); /* Menambahkan shadow yang lebih besar saat di-hover */
+}
+
+/*riwayat pendidikan mulai*/
+.timeline h2 {
+  padding-top: 3rem;
+}
