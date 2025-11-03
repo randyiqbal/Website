@@ -225,6 +225,123 @@
         filter: drop-shadow(0 10px 20px rgba(102, 126, 234, 0.4));
       }
 
+      /* EDUCATION ROADMAP STYLING */
+      #Education {
+        background: linear-gradient(135deg, #e9ecef 0%, #ffffff 100%);
+      }
+
+      .timeline {
+        position: relative;
+        padding: 20px 0;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        background: linear-gradient(to top, var(--accent), var(--primary));
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+      }
+
+      .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 50%;
+      }
+
+      .timeline-content {
+        padding: 20px;
+        background: white;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-left: 5px solid var(--primary);
+      }
+
+      .timeline-item:hover .timeline-content {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+      }
+
+      .timeline-item:nth-child(even) .timeline-content {
+        border-left: none;
+        border-right: 5px solid var(--primary);
+      }
+
+      .timeline-content h5 {
+        color: var(--dark);
+        font-weight: 700;
+      }
+
+      .timeline-content p {
+        margin: 0;
+        color: #666;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        right: -9px;
+        background: var(--primary);
+        border: 4px solid var(--light);
+        top: 30px;
+        border-radius: 50%;
+        z-index: 1;
+        transition: background 0.3s ease;
+      }
+
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: -9px;
+        right: auto;
+      }
+
+      .timeline-item:hover .timeline-dot {
+        background: var(--accent);
+      }
+
+      .timeline-content::after {
+        content: " ";
+        position: absolute;
+        top: 26px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content::after {
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+        right: -10px;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content::after {
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+        left: -10px;
+      }
+
+      .timeline-date {
+        font-weight: 600;
+        color: var(--secondary);
+        display: block;
+        margin-bottom: 5px;
+      }
+
       /* WORK EXPERIENCE */
       .Pengalaman {
         background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
@@ -440,6 +557,42 @@
           width: 60px;
           height: 60px;
         }
+
+        /* Responsive for Timeline */
+        .timeline::before {
+          left: 10px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 30px;
+          padding-right: 10px;
+        }
+
+        .timeline-item:nth-child(even) {
+          left: 0%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+          border-width: 10px 10px 10px 0;
+          border-color: transparent white transparent transparent;
+          left: -10px;
+          right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+          left: -10px;
+          right: auto;
+        }
+
+        .timeline-dot {
+          left: 1px;
+          right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+          left: 1px;
+        }
       }
 
       /* SCROLL BEHAVIOR */
@@ -462,7 +615,6 @@
     </style>
   </head>
   <body>
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="#Home">🚀 Randy Iqbal</a>
@@ -473,7 +625,7 @@
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#Home">Home</a>
             <a class="nav-link" href="#About">About</a>
-            <a class="nav-link" href="#Pengalaman">Experience</a>
+            <a class="nav-link" href="#Education">Education</a> <a class="nav-link" href="#Pengalaman">Experience</a>
             <a class="nav-link" href="#certificates">Certificates</a>
             <a class="nav-link" href="#hubungi">Contact</a>
           </div>
@@ -481,7 +633,6 @@
       </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section class="jumbotron" id="Home">
       <div class="hero-content">
         <img src="./img/1732609286891 (1).jpg" alt="Randy Iqbal" />
@@ -491,24 +642,23 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section id="About">
       <div class="container">
         <h2 class="mb-5">About Me</h2>
         <div class="row align-items-center">
           <div class="col-lg-6 mb-4">
-            <p class="about-text">
+            <p class="about-text fade-in-on-scroll">
               Halo, nama saya Randy Iqbal Putra Kesuma. Saya adalah mahasiswa kelas karyawan yang masih aktif dan memiliki minat besar di dunia Teknologi Informasi, khususnya dalam bidang Jaringan IT, IT Support, Cyber Security dan
               Pengembangan Website.
             </p>
-            <p class="about-text">
+            <p class="about-text fade-in-on-scroll">
               Saya bisa bekerja dalam tim maupun individu, senang mempelajari hal-hal baru, dan selalu antusias menghadapi tantangan dalam dunia kerja. Saya memiliki sertifikasi MTCNA (MikroTik Certified Network Associate) dan keterampilan
               teknis di berbagai bidang.
             </p>
           </div>
           <div class="col-lg-6">
-            <h5 style="color: var(--primary); font-weight: 700; margin-bottom: 2rem; text-align: center">Technical Skills</h5>
-            <ul class="skills-list">
+            <h5 style="color: var(--primary); font-weight: 700; margin-bottom: 2rem; text-align: center" class="fade-in-on-scroll">Technical Skills</h5>
+            <ul class="skills-list fade-in-on-scroll">
               <li><img src="./img/mikrotik.png" alt="MikroTik" title="MikroTik" /></li>
               <li><img src="./img/sqllogooo.png" alt="MySQL" title="MySQL" /></li>
               <li><img src="./img/Oracle-Logo.png" alt="Oracle" title="Oracle" /></li>
@@ -517,13 +667,58 @@
               <li><img src="./img/htmlok.png" alt="HTML" title="HTML" /></li>
               <li><img src="./img/cssok.png" alt="CSS" title="CSS" /></li>
               <li><img src="./img/jsok.png" alt="JavaScript" title="JavaScript" /></li>
+              <li><img src="./img/vmware.jpg" alt="JavaScript" title="JavaScript" /></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WORK EXPERIENCE -->
+    <hr />
+
+    <section id="Education">
+      <div class="container">
+        <h2 class="mb-5">Education Journey 🎓</h2>
+        <div class="timeline">
+          <div class="timeline-item fade-in-on-scroll">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2022 - Sekarang (Semester Ahir)</span>
+              <h5>Universitas Pelita Bangsa</h5>
+              <p>Jenjang: S1 - Teknik Informatika</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-on-scroll">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Lulus Tahun 2017</span>
+              <h5>SMK Panca Bhakti Banjarnegara</h5>
+              <p>Bidang Keahlian: Teknik Elektronika Industri</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-on-scroll">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Lulus Tahun 2014</span>
+              <h5>SMPN 1 Sigaluh</h5>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-on-scroll">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Lulus Tahun 2011</span>
+              <h5>SDN 1 Tunggoro</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
     <section class="Pengalaman" id="Pengalaman">
       <div class="container">
         <h2 class="mb-5">Work Experience</h2>
@@ -577,7 +772,7 @@
                   <img src="./img/yamani.png" alt="Yamani" class="company-logo" />
                   PT Yamani Spring Indonesia
                 </h5>
-                <p class="card-text"><strong>IT Staff | Assistant Manager</strong></p>
+                <p class="card-text"><strong>IT Staff | Support Management</strong></p>
                 <p class="card-text"><small>Apr 2025 - Present</small></p>
                 <p class="card-text">Network management, IT support, device control, dan user assistance.</p>
               </div>
@@ -587,7 +782,6 @@
       </div>
     </section>
 
-    <!-- CERTIFICATES -->
     <section id="certificates">
       <div class="container">
         <h2 class="mb-5">Certifications</h2>
@@ -643,7 +837,6 @@
       </div>
     </section>
 
-    <!-- FOOTER / CONTACT -->
     <footer id="hubungi">
       <div class="container">
         <h2 class="mb-5">Get In Touch</h2>
@@ -659,6 +852,11 @@
               <a href="https://www.linkedin.com/in/randy-iqbal-putra-kesuma-2993041b5/" target="_blank" class="social-icon text-white"><i class="bi bi-linkedin" style="font-size: 1.5rem"></i></a>
               <a href="https://www.facebook.com/share/14zuNKFPrN/?mibextid=qi2Omg" target="_blank" class="social-icon text-white"><i class="bi bi-facebook" style="font-size: 1.5rem"></i></a>
               <a href="https://www.instagram.com/randyiqbalputra?igsh=MTk2c3JjZ2h4OW03Mw==" target="_blank" class="social-icon text-white"><i class="bi bi-instagram" style="font-size: 1.5rem"></i></a>
+            </div>
+
+            <div class="mt-4 text-center text-lg-start">
+              <h6 class="mb-3">Or Scan My WhatsApp QR</h6>
+              <img src="./img/QR WA.png" alt="WhatsApp QR Code" style="width: 150px; height: auto; border-radius: 8px; background: white; padding: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2)" class="fade-in-on-scroll" />
             </div>
           </div>
 
